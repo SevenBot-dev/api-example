@@ -13,7 +13,7 @@ def delete_afk():
     if response.status_code == 401:
         sys.stderr.write("認証に失敗しました。\n")
         sys.exit(1)
-    elif response.status_code == 419:
+    elif response.status_code == 429:
         print("レートリミットに到達しました、やり直しています。")
         time.sleep(response.headers["Ratelimit-Reset"])
         delete_afk()

@@ -16,7 +16,7 @@ def delete_afk()
   )
 
   case response.code
-  when 419
+  when 429
     puts "レートリミットに到達しました、やり直しています。"
     sleep response.headers["Ratelimit-Reset"]
     delete_afk
