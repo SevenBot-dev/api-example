@@ -1,4 +1,3 @@
-import json
 import requests
 import sys
 import time
@@ -19,7 +18,7 @@ def delete_afk():
         time.sleep(response.headers["Ratelimit-Reset"])
         delete_afk()
     else:
-        response_data = json.loads(response.text)
+        response_data = response.json()
         if response_data["code"] == "not_afk":
             print("AFK状態ではありません。")
             sys.exit(0)
