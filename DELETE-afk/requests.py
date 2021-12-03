@@ -1,3 +1,4 @@
+import json
 import requests
 import sys
 import time
@@ -18,6 +19,20 @@ def delete_afk():
         time.sleep(response.headers["Ratelimit-Reset"])
         delete_afk()
     else:
+        response_data = json.loads(response.text)
+        print("AFKを解除しました。")
+        print("メンションされたメッセージのURL：")
+        if not response_data["urls"]:
+            print("  (なし)")
+        else:
+            for url in response_data["urls"]:
+                print(f"- {url}")
+        if response_data["tweet"] is not None:
+            print("ツイートされたメッセージのURL：")
+            if response_data["tweet"] is False:
+                print("  (失敗)")
+            else:
+                print(f"- {response_data['tweet']}")
         return
 
 
