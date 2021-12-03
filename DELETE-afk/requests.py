@@ -7,13 +7,9 @@ TOKEN = "ThisIsT0ken"
 
 print("通信中...", end="")
 
+
 def delete_afk():
-    response = requests.delete(
-        "https://api.sevenbot.jp/afk",
-        headers={
-            "Authorization": f"{USER_ID} {TOKEN}"
-        }
-    )
+    response = requests.delete("https://api.sevenbot.jp/afk", headers={"Authorization": f"{USER_ID} {TOKEN}"})
     if response.status_code == 401:
         sys.stderr.write("認証に失敗しました。\n")
         sys.exit(1)
@@ -23,6 +19,7 @@ def delete_afk():
         delete_afk()
     else:
         return
+
 
 delete_afk()
 print("完了")

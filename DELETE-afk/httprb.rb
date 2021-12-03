@@ -7,7 +7,7 @@ print "通信中…"
 
 def delete_afk()
   response = HTTP.delete("https://api.sevenbot.jp/afk")
- 
+
   case response.code
   when 419
     puts "\nレートリミットに到達しました、やり直しています。"
