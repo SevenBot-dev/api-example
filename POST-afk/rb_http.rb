@@ -1,7 +1,7 @@
 require "http"
 
-USER_ID = 686547120534454315
-TOKEN = "ACl8d77OUt4NpTHM"
+USER_ID = 00000000000000000
+TOKEN = "ThisIsT0ken"
 
 print "AFKにする理由を入力してください："
 reason = gets.chomp

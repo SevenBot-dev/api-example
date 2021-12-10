@@ -2,8 +2,8 @@ import requests
 import sys
 import time
 
-USER_ID = 686547120534454315
-TOKEN = "ACl8d77OUt4NpTHM"
+USER_ID = 00000000000000000
+TOKEN = "ThisIsT0ken"
 
 reason = input("AFKにする理由を入力してください: ")
 
